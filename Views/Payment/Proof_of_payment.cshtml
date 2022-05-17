@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Payment_Sytem.Models.Payments>
+
+@{
+    ViewData["Title"] = "Proofofpayment";
+}
+
+<h1>Proof of payment</h1>
+
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SurName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_of_payment_requested)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_Invoice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment_For)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description_of_payment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account_Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Manager_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Manager_Signature)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SurName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_of_payment_requested)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_Invoice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Payment_For)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description_of_payment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Account_Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manager_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manager_Signature)
+            </td>
+         
+        </tr>
+}
+    </tbody>
+</table>

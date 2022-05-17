@@ -1,0 +1,90 @@
+﻿@model Payment_Sytem.Models.Payments
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h4>Payments Systerm</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index" nethod=" post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                @Html.ValidationMessageFor(m => m.Name, "", new { @style = "color:red" })
+
+            </div>
+            <div class="form-group">
+                <label asp-for="SurName" class="control-label"></label>
+                <input asp-for="SurName" class="form-control" />
+                <span asp-validation-for="SurName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Department" class="control-label"></label>
+                <input asp-for="Department" class="form-control" />
+                @Html.ValidationMessageFor(m => m.Department, "", new { @style = "color:red" })
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Date_of_payment_requested" class="control-label"></label>
+                <input asp-for="Date_of_payment_requested" class="form-control" />
+                @Html.ValidationMessageFor(m => m.Date_of_payment_requested, "", new { @style = "color:red" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Date_Invoice" class="control-label"></label>
+                <input asp-for="Date_Invoice" class="form-control" />
+                @Html.ValidationMessageFor(m => m.Date_Invoice, "", new { @style = "color:red" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Payment_For" class="control-label"></label>
+                <input asp-for="Payment_For" class="form-control" />
+                @Html.ValidationMessageFor(m => m.Payment_For, "", new { @style = "color:red" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Description_of_payment" class="control-label"></label>
+                <input asp-for="Description_of_payment" class="form-control" />
+          
+            </div>
+            <div class="form-group">
+                <label asp-for="Account_Number" class="control-label"></label>
+                <input asp-for="Account_Number" *class="form-control" * />
+                @Html.ValidationMessageFor(m => m.Account_Number, "", new { @style = "color:red" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Manager_Name" class="control-label"></label>
+
+                <select asp-for="Manager_Name" class="form-control" asp-items="new SelectList( ViewBag.Manager_Name)">
+                    <option value="">Choose the Manager to Authorize Payments</option>
+                </select>
+
+                @Html.ValidationMessageFor(m => m.Manager_Name, "", new { @style = "color:red" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Manager_Signature" class="control-label"></label>
+
+                <select asp-for="Manager_Signature" class="form-control" asp-items="new SelectList( ViewBag.ManagerSignature )">
+                    <option value="">Choose the Manager;s Signature</option>
+                </select>
+
+                @Html.ValidationMessageFor(m => m.Manager_Signature, "", new { @style = "color:red" })
+            </div>
+            <div class="form-group">
+                <label asp-for=" InvoicePdf " class="control-label"></label>
+                <div class="custom-file">
+                    <input asp-for=" InvoicePdf " class="custom-file-input" id="customFile" />
+                    <label class="custom-file-label" for="custom-file"> Choose Pdf</label>
+                </div>
+                @Html.ValidationMessageFor(m => m.InvoicePdf, "", new { @style = "color:red" })
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+           
+        </form>
+    </div>
+</div>
+
+
